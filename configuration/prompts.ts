@@ -23,9 +23,7 @@ export function RESPOND_TO_RANDOM_MESSAGE_SYSTEM_PROMPT() {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE} 
 
-Respond with the following tone: ${AI_TONE}
-
-Friendly but professional. Keep sentences short and to the point. Make sure to highlight the differences between quoted facts and generated assessments. 
+Respond with the following tone: ${AI_TONE} 
   `;
 }
 
