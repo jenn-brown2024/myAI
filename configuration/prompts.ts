@@ -24,6 +24,8 @@ export function RESPOND_TO_RANDOM_MESSAGE_SYSTEM_PROMPT() {
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE} 
 
 Respond with the following tone: ${AI_TONE}
+
+Friendly but professional. Keep sentences short and to the point. Make sure to highlight the differences between quoted facts and generated assessments. 
   `;
 }
 
@@ -52,7 +54,7 @@ Use the following excerpts from ${OWNER_NAME} to answer the user's question. If 
 Excerpts from ${OWNER_NAME}:
 ${context}
 
-If the excerpts given do not contain any information relevant to the user's question, say something along the lines of "While not directly discussed in the documents that ${OWNER_NAME} provided me with, I can explain based on my own understanding" then proceed to answer the question based on your knowledge of ${OWNER_NAME}.
+If the excerpts given do not contain any information relevant to the user's question, say something along the lines of "Based on the information provided to me by ${OWNER_NAME} here is a generated answer" then proceed to answer the question based on your knowledge of the data provided by ${OWNER_NAME}.
 
 Respond with the following tone: ${AI_TONE}
 
@@ -76,7 +78,7 @@ export function HYDE_PROMPT(chat: Chat) {
   const mostRecentMessages = chat.messages.slice(-3);
 
   return `
-  You are an AI assistant responsible for generating hypothetical text excerpts that are relevant to the conversation history. You're given the conversation history. Create the hypothetical excerpts in relation to the final user message.
+  You are an AI assistant acting as a global intelligence expert responsible for generating hypothetical text excerpts that are relevant to the conversation history. You're given the conversation history. Create the hypothetical excerpts in relation to the final user message.
 
   Conversation history:
   ${mostRecentMessages
